@@ -69,6 +69,7 @@ class Program
             throw new Exception("Usage: .\\HelloPhi3V <model_path>");
         }
 */
-        Run("../../../../../../models");//args[0]);
+var modelPath = "../../../../../../models";
+        Run(modelPath);//args[0]);
     }
 }
