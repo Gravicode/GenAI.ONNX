@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Genie.MainWindow"
+        xmlns:views="clr-namespace:Genny.Views"
+        xmlns:controls="clr-namespace:Genny.Controls"     
+        xmlns:ctrl="using:GroupBox.Avalonia.Controls"    
+        Title="Genny" Name="UI" 
+        >
+      <Grid DataContext="{Binding ElementName=UI}">
+        <DockPanel>
+
+            <!--Input-->
+            <DockPanel DockPanel.Dock="Left" Width="300">
+
+                <ctrl:GroupBox DockPanel.Dock="Top" Header="Model Folder" Margin="2,5,0,1">
+                    <DockPanel Margin="3">
+                        <UniformGrid DockPanel.Dock="Bottom" Columns="1">
+                            <Button Content="Load Model" Command="{Binding LoadModelCommand}" />
+                        </UniformGrid>
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Content="Open" Command="{Binding OpenModelCommand}"/>
+                            <TextBox Text="{Binding ModelPath}"/>
+                        </DockPanel>
+                    </DockPanel>
+                </ctrl:GroupBox>
+
+                <DockPanel>
+                    <ctrl:GroupBox DockPanel.Dock="Top" Header="Search Options" Margin="2,5,0,1">
+                        <controls:SearchOptionsControl SearchOptions="{Binding Configuration.SearchOptions}"  />
+                    </ctrl:GroupBox>
+                </DockPanel>
+
+            </DockPanel>
+
+            <!--Content-->
+            <TabControl>
+
+                <!--StatelessView Tab-->
+                <TabItem Header="Stateless">
+                    <Grid IsEnabled="{Binding IsModelLoaded}">
+                        <views:StatelessView
+                            Model="{Binding Model}"
+                            Tokenizer="{Binding Tokenizer}"
+                            ModelOptions="{Binding Configuration.ModelOptions}"
+                            SearchOptions="{Binding Configuration.SearchOptions}" />
+                    </Grid>
+                </TabItem>
+
+                <!--StatefulView Tab-->
+                <TabItem Header="Stateful">
+                    <Grid IsEnabled="{Binding IsModelLoaded}">
+                        <views:StatefulView 
+                            Model="{Binding Model}"
+                            Tokenizer="{Binding Tokenizer}"
+                            ModelOptions="{Binding Configuration.ModelOptions}"
+                            SearchOptions="{Binding Configuration.SearchOptions}" />
+                    </Grid>
+                </TabItem>
+
+                <!--Tokenizer Tab-->
+                <TabItem Header="Tokenizer">
+                    <Grid IsEnabled="{Binding IsModelLoaded}">
+                        <views:TokenizerView Tokenizer="{Binding Tokenizer}" />
+                    </Grid>
+                </TabItem>
+
+            </TabControl>
+
+        </DockPanel>
+    </Grid>
+</Window>

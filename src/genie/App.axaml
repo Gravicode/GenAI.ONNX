@@ -1,0 +1,14 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Genie.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+<Application.Resources>
+        <Image x:Key="ImageAvatarUser" Source="/Images/user.png" />
+        <Image x:Key="ImageAvatarRobot" Source="/Images/robot.png" />
+    </Application.Resources>
+</Application>
