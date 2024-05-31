@@ -8,7 +8,7 @@
         <FluentTheme />
     </Application.Styles>
 <Application.Resources>
-        <Image x:Key="ImageAvatarUser" Source="/Images/user.png" />
-        <Image x:Key="ImageAvatarRobot" Source="/Images/robot.png" />
+        <Image x:Key="ImageAvatarUser" Source="Images/user.png" />
+        <Image x:Key="ImageAvatarRobot" Source="Images/robot.png" />
     </Application.Resources>
 </Application>

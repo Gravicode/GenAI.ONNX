@@ -11,6 +11,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
+using ReactiveUI;
+using System.Reactive;
 
 namespace Genny.Views
 {
@@ -24,16 +26,16 @@ namespace Genny.Views
 
         public TokenizerView()
         {
-            EncodeCommand = new RelayCommand<string>(EncodeAsync);
-            DecodeCommand = new RelayCommand<string>(DecodeAsync);
+            EncodeCommand = ReactiveCommand.Create<string>(EncodeAsync); //new RelayCommand<string>(EncodeAsync);
+            DecodeCommand = ReactiveCommand.Create<string>(DecodeAsync);//new RelayCommand<string>(DecodeAsync);
             InitializeComponent();
         }
 
         public static readonly AvaloniaProperty<Tokenizer> TokenizerProperty =
            AvaloniaProperty.Register<TokenizerView,Tokenizer>(nameof(Tokenizer));
 
-        public RelayCommand<string> EncodeCommand { get; }
-        public RelayCommand<string> DecodeCommand { get; }
+        public ReactiveCommand<string, Unit> EncodeCommand { get; }
+        public ReactiveCommand<string, Unit> DecodeCommand { get; }
 
         public Tokenizer Tokenizer
         {
@@ -54,7 +56,7 @@ namespace Genny.Views
         }
 
 
-        private async Task EncodeAsync(string input)
+        private async void EncodeAsync(string input)
         {
             EncodeResult = null;
             try
@@ -71,7 +73,7 @@ namespace Genny.Views
         }
 
 
-        private async Task DecodeAsync(string input)
+        private async void DecodeAsync(string input)
         {
             DecodeResult = null;
             try

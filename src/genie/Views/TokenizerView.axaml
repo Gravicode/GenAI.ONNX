@@ -15,7 +15,7 @@
             <TextBlock DockPanel.Dock="Top" Text="Encode" />
             <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" Content="Encode" Command="{Binding EncodeCommand}" CommandParameter="{Binding Text, ElementName=EncodeInputTextbox}" Margin="0,4,0,0" Padding="3"/>
             <UniformGrid Rows="2">
-                <TextBox x:Name="EncodeInputTextbox" TextWrapping="Wrap"/>
+                <TextBox x:Name="EncodeInputTextbox" TextWrapping="Wrap" Margin="0,0,0,5"/>
                 <TextBox Text="{Binding EncodeResult}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="1,0,1,1"/>
             </UniformGrid>
         </DockPanel>
@@ -25,7 +25,7 @@
             <TextBlock DockPanel.Dock="Top" Text="Decode" />
             <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" Content="Decode" Command="{Binding DecodeCommand}" CommandParameter="{Binding Text, ElementName=DecodeInputTextbox}" Margin="0,4,0,0" Padding="3"/>
             <UniformGrid Rows="2">
-                <TextBox x:Name="DecodeInputTextbox" TextWrapping="Wrap"/>
+                <TextBox x:Name="DecodeInputTextbox" TextWrapping="Wrap" Margin="0,0,0,5"/>
                 <TextBox Text="{Binding DecodeResult}" IsReadOnly="True" TextWrapping="Wrap" BorderThickness="1,0,1,1"/>
             </UniformGrid>
         </DockPanel>

@@ -14,24 +14,30 @@
 
             <!--Input-->
             <DockPanel DockPanel.Dock="Left" Width="300">
+				<ScrollViewer>
+					<StackPanel Orientation="Vertical">
+						<ctrl:GroupBox DockPanel.Dock="Top" Header="Model Folder" Margin="2,5,0,1">
+							<DockPanel Margin="3">
+								<UniformGrid DockPanel.Dock="Bottom" Columns="1">
+									<StackPanel Orientation="Horizontal">
+										<Button DockPanel.Dock="Right" Content="Select Model Folder" Margin="0,5,5,5" Command="{Binding OpenModelCommand}"/>
+										<Button Content="Load Model" Command="{Binding LoadModelCommand}" />
+									</StackPanel>
+								</UniformGrid>
+								<DockPanel>
+									<TextBox Text="{Binding ModelPath}"/>
+								</DockPanel>
+							</DockPanel>
+						</ctrl:GroupBox>
 
-                <ctrl:GroupBox DockPanel.Dock="Top" Header="Model Folder" Margin="2,5,0,1">
-                    <DockPanel Margin="3">
-                        <UniformGrid DockPanel.Dock="Bottom" Columns="1">
-                            <Button Content="Load Model" Command="{Binding LoadModelCommand}" />
-                        </UniformGrid>
-                        <DockPanel>
-                            <Button DockPanel.Dock="Right" Content="Open" Command="{Binding OpenModelCommand}"/>
-                            <TextBox Text="{Binding ModelPath}"/>
-                        </DockPanel>
-                    </DockPanel>
-                </ctrl:GroupBox>
-
-                <DockPanel>
-                    <ctrl:GroupBox DockPanel.Dock="Top" Header="Search Options" Margin="2,5,0,1">
-                        <controls:SearchOptionsControl SearchOptions="{Binding Configuration.SearchOptions}"  />
-                    </ctrl:GroupBox>
-                </DockPanel>
+						<DockPanel>
+							<ctrl:GroupBox DockPanel.Dock="Top" Header="Search Options" Margin="2,5,0,1">
+								<controls:SearchOptionsControl SearchOptions="{Binding Configuration.SearchOptions}"  />
+							</ctrl:GroupBox>
+						</DockPanel>
+					</StackPanel>
+				</ScrollViewer>
+               
 
             </DockPanel>
 

@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 using Microsoft.ML.OnnxRuntimeGenAI;
-
+namespace phivision;
 class Program
 {
     static void Run(string modelPath)
@@ -69,6 +69,6 @@ class Program
             throw new Exception("Usage: .\\HelloPhi3V <model_path>");
         }
 */
-        Run("../hellophi/models");//args[0]);
+        Run("../../../../../../models");//args[0]);
     }
 }

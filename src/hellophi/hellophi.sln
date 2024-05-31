@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellophi", "hellophi.csproj", "{4CB8C3F5-4599-48A8-880D-7EB63A900E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellophi", "hellophi.csproj", "{819A4645-FDEA-4572-A5D9-30DFE51984E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4CB8C3F5-4599-48A8-880D-7EB63A900E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CB8C3F5-4599-48A8-880D-7EB63A900E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CB8C3F5-4599-48A8-880D-7EB63A900E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CB8C3F5-4599-48A8-880D-7EB63A900E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{819A4645-FDEA-4572-A5D9-30DFE51984E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819A4645-FDEA-4572-A5D9-30DFE51984E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819A4645-FDEA-4572-A5D9-30DFE51984E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{819A4645-FDEA-4572-A5D9-30DFE51984E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C45D8924-D289-42EE-A0BB-9F8B1A3AEA5A}
+		SolutionGuid = {4DEF13D5-8832-4E00-98B3-69770D167DA4}
 	EndGlobalSection
 EndGlobal

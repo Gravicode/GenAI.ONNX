@@ -13,7 +13,8 @@
     <PackageReference Include="BinToss.GroupBox.Avalonia" Version="1.0.0" />
     <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
     <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.3.0-rc2" />
-    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.3.0-rc2" />
+    <PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.DirectML" Version="0.3.0-rc2" />
+    
     <PackageReference Include="reactiveui" Version="20.1.1" />
     <PackageReference Include="System.Text.Json" Version="8.0.3" />
     <PackageReference Include="Avalonia" Version="11.0.10" />
@@ -25,8 +26,12 @@
 
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\user.png" />
-    <Resource Include="Images\robot.png" />
+    <AvaloniaResource Include="Images\user.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Images\robot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
   </ItemGroup>
 
 </Project>

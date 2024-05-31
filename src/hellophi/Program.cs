@@ -7,7 +7,13 @@ Console.WriteLine("-------------");
 Console.WriteLine("Hello, Phi!");
 Console.WriteLine("-------------");
 
-string modelPath = Path.Combine(Directory.GetCurrentDirectory(), "models");
+string modelPath = "../../../../../../models";//Path.Combine(Directory.GetCurrentDirectory(), "models");
+//rename files
+var files = Directory.GetFiles(modelPath,"*.*");
+foreach(string file in files){
+    var newfile = file.Replace("cpu_and_mobile_cpu-int4-rtn-block-32-acc-level-4_","");
+    File.Move(file,newfile);
+}
 using Model model = new Model(modelPath);
 using Tokenizer tokenizer = new Tokenizer(model);
 

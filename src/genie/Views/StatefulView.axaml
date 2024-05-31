@@ -13,21 +13,21 @@
     <DockPanel DataContext="{Binding ElementName=UI}">
 
     <!--Input Controls-->
-        <DockPanel DockPanel.Dock="Bottom" Height="100" Margin="2">
+        <DockPanel DockPanel.Dock="Bottom" Height="100" Margin="2,0,0,5">
 
             <!--Buttons-->
-            <DockPanel DockPanel.Dock="Right">
+            <DockPanel DockPanel.Dock="Right" >
                 <DockPanel>
-                    <UniformGrid Columns="2" DockPanel.Dock="Bottom" Height="30" Width="100">
-                        <Button Content="Clear" Command="{Binding ClearCommand}"/>
-                        <Button Content="Cancel" Command="{Binding CancelCommand}"/>
-                    </UniformGrid>
-                    <Button Content="Send" Command="{Binding GenerateCommand}" IsDefault="True"/>
+					<StackPanel Orientation="Vertical">
+						<Button Content="Send" Command="{Binding GenerateCommand}" Margin="5,0,5,5" IsDefault="True"/>
+						<Button Content="Clear" Command="{Binding ClearCommand}" Margin="5,0,5,5"/>
+						<Button Content="Cancel" Command="{Binding CancelCommand}" Margin="5,0,5,5"/>
+					</StackPanel>
                 </DockPanel>
             </DockPanel>
 
             <!--Prompt-->
-            <TextBox Name="TxtPrompt" Text="{Binding Prompt}" />
+            <TextBox Name="TxtPrompt" Text="{Binding Prompt}" Margin="0,0,0,5" />
 
         </DockPanel>
 
@@ -35,14 +35,14 @@
         <!--Result List-->
         <Border BorderBrush="Gainsboro" BorderThickness="1" Margin="2">
             <ScrollViewer Name="ScrollViewer1" HorizontalScrollBarVisibility="Disabled" >
-                <ItemsControl ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <ItemsControl ItemsSource="{Binding ResultHistory}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="model:ResultModel">
                             <Border BorderBrush="Gainsboro" BorderThickness="1" Margin="2">
                                 <DockPanel>
                                     <DockPanel DockPanel.Dock="Left" Margin="10">
                                         <Border BorderBrush="Gainsboro" BorderThickness="1" Margin="2" VerticalAlignment="Top">
-                                            <Image Width="60" Height="60" Source="{StaticResource ImageAvatarRobot}">
+                                            <Image Width="60" Height="60" Source="/Images/robot.png">
                                             </Image>
                                         </Border>
                                     </DockPanel>

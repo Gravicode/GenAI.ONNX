@@ -16,6 +16,8 @@ using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
 using ReactiveUI;
 using System.Reactive;
+using Splat.ModeDetection;
+using System.IO;
 
 //using System.Windows;
 //using System.Windows.Controls;
@@ -56,10 +58,10 @@ namespace Genny.Views
             AvaloniaProperty.Register<StatefulView, Tokenizer>(nameof(Tokenizer));
 
         public static readonly AvaloniaProperty<ModelOptionsModel> ModelOptionsProperty =
-            AvaloniaProperty.Register<StatefulView,ModelOptionsModel>(nameof(ModelOptions));
+            AvaloniaProperty.Register<StatefulView,ModelOptionsModel>(nameof(ModelOptions), new ModelOptionsModel());
 
         public static readonly AvaloniaProperty<SearchOptionsModel> SearchOptionsProperty =
-            AvaloniaProperty.Register<StatefulView,SearchOptionsModel>(nameof(SearchOptions));
+            AvaloniaProperty.Register<StatefulView,SearchOptionsModel>(nameof(SearchOptions),new SearchOptionsModel());
 
         public ReactiveCommand<Unit, Unit>  ClearCommand { get; }
         public ReactiveCommand<Unit, Unit>  CancelCommand { get; }
